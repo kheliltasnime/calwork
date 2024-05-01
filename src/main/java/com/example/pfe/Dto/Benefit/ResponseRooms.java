@@ -22,7 +22,9 @@ public class ResponseRooms {
     Long benefitId;
     private Instant createdAt;
     private Instant updatedAt;
+    private String state;
     private ResponseBenefit benefit;
+    private String category="Rooms";
     public static ResponseRooms makeRooms(Rooms rooms){
         return ResponseRooms.builder()
                 .id(rooms.getId())
@@ -31,6 +33,8 @@ public class ResponseRooms {
                 .location(rooms.getLocation())
                 .maintenance_status(rooms.getMaintenance_status())
                 .capacity(rooms.getCapacity())
+                .category(rooms.getCategory())
+                .state(rooms.getState())
                 .benefit(ResponseBenefit.makeBenefit(rooms.getBenefit()))
                 .createdAt(rooms.getCreatedAt())
                 .updatedAt(rooms.getUpdatedAt())

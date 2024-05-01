@@ -33,6 +33,7 @@ public class ResponseEquipments {
     private Instant updatedAt;
     private ResponseBenefit benefit;
     private String state;
+    String category="Equipments";
     public static ResponseEquipments makeEquipments(Equipments equipments){
         return ResponseEquipments.builder()
                 .id(equipments.getId())
@@ -43,6 +44,7 @@ public class ResponseEquipments {
                 .purchase_date(equipments.getPurchase_date())
                 .quantity(equipments.getQuantity())
                 .price(equipments.getPrice())
+                .category(equipments.getCategory())
                 .state(equipments.getState()) // Assigner la valeur de state
                 .maintenance_status(equipments.getMaintenance_status())
                 .benefit(ResponseBenefit.makeBenefit(equipments.getBenefit()))

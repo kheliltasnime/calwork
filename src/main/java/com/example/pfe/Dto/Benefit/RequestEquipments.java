@@ -30,6 +30,7 @@ public class RequestEquipments {
     // Expression régulière pour valider la propriété state
     @Pattern(regexp = "^(Enabled|Disabled)$", message = "State must be either 'Enabled' or 'Disabled'")
     private String state = "Enabled";
+    private String category="Equipments";
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.pfe.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,12 +24,13 @@ public class Rooms {
     String location;
     String maintenance_status;
     Integer capacity;
-
+    @Pattern(regexp = "^(Enabled|Disabled)$", message = "State must be either 'Enabled' or 'Disabled'")
+    private String state = "Enabled";
     @CreationTimestamp
     private Instant createdAt;
     @UpdateTimestamp
     private Instant updatedAt;
-
+    private String category="Rooms";
     @ManyToOne
     @JoinColumn(name = "benefit_id")
     private Benefit benefit;

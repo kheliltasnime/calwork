@@ -3,6 +3,7 @@ package com.example.pfe.Entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
+import org.apache.tomcat.util.bcel.Const;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -30,6 +31,7 @@ public class Equipments {
     Integer quantity;
     Integer price;
     String maintenance_status;
+    private String category="Equipments";
     // Expression régulière pour valider la propriété state
     @Pattern(regexp = "^(Enabled|Disabled)$", message = "State must be either 'Enabled' or 'Disabled'")
     private String state = "Enabled";

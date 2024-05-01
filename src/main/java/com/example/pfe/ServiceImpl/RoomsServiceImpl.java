@@ -38,12 +38,14 @@ public class RoomsServiceImpl implements RoomsService {
     @Override
     public void createRooms(RequestRooms roomsRequest) {
         Benefit benefit = benefitRepository.findById(roomsRequest.getBenefitId()).orElseThrow();
+        roomsRequest.setCategory("Rooms");
         Rooms rooms = Rooms.builder()
                 .name(roomsRequest.getName())
                 .type(roomsRequest.getType())
                 .location(roomsRequest.getLocation())
                 .maintenance_status(roomsRequest.getMaintenance_status())
                 .capacity(roomsRequest.getCapacity())
+                .category(roomsRequest.getCategory())
                 .benefit(benefit)
                 .build();
         roomsRepository.save(rooms);
@@ -60,6 +62,9 @@ public class RoomsServiceImpl implements RoomsService {
         Rooms rooms = roomsRepository.findById(id).orElseThrow();
         if (roomsRequest.getCapacity() != 0){
             rooms.setCapacity(roomsRequest.getCapacity());
+        }
+        if (roomsRequest.getState() != null){
+            rooms.setState(roomsRequest.getState());
         }
         if (roomsRequest.getMaintenance_status() != null){
             rooms.setMaintenance_status(roomsRequest.getMaintenance_status());

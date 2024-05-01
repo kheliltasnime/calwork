@@ -38,11 +38,13 @@ public class EquipmentsServiceImpl implements EquipmentsService {
     @Override
     public void createEquipments(RequestEquipments equipmentsRequest) {
         Benefit benefit = benefitRepository.findById(equipmentsRequest.getBenefitId()).orElseThrow();
+        equipmentsRequest.setCategory("Equipments");
         Equipments equipments = Equipments.builder()
                 .name(equipmentsRequest.getName())
                 .type(equipmentsRequest.getType())
                 .manufactuer(equipmentsRequest.getManufactuer())
                 .model(equipmentsRequest.getModel())
+                .category(equipmentsRequest.getCategory())
                 .purchase_date(equipmentsRequest.getPurchase_date())
                 .quantity(equipmentsRequest.getQuantity())
                 .price(equipmentsRequest.getPrice())
