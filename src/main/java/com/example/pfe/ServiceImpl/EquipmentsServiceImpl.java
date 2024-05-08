@@ -44,6 +44,11 @@ public class EquipmentsServiceImpl implements EquipmentsService {
                 .type(equipmentsRequest.getType())
                 .manufactuer(equipmentsRequest.getManufactuer())
                 .model(equipmentsRequest.getModel())
+                .state(equipmentsRequest.getState())
+                .Reservation_State(equipmentsRequest.getReservation_State())
+                .returned((equipmentsRequest.getReturned()))
+                .taken((equipmentsRequest.getTaken()))
+                .Description((equipmentsRequest.getDescription()))
                 .category(equipmentsRequest.getCategory())
                 .purchase_date(equipmentsRequest.getPurchase_date())
                 .quantity(equipmentsRequest.getQuantity())
@@ -81,6 +86,18 @@ public class EquipmentsServiceImpl implements EquipmentsService {
             equipments.setBenefit(benefit);
         } if (equipmentsRequest.getState() != null){
             equipments.setState(equipmentsRequest.getState());
+        }
+        if (equipmentsRequest.getReturned() != null){
+            equipments.setReturned(equipmentsRequest.getReturned());
+        }
+        if (equipmentsRequest.getReservation_State() != null){
+            equipments.setReservation_State(equipmentsRequest.getReservation_State());
+        }
+        if (equipmentsRequest.getTaken() != null){
+            equipments.setTaken(equipmentsRequest.getTaken());
+        }
+        if (equipmentsRequest.getDescription() != null){
+            equipments.setDescription(equipmentsRequest.getDescription());
         }
 
 

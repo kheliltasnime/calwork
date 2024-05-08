@@ -31,6 +31,16 @@ public class Equipments {
     Integer quantity;
     Integer price;
     String maintenance_status;
+    @Pattern(regexp = "^(Reserved|Not yet)$", message = " Reservation State must be either 'Reserved' or 'Not yet'")
+    private String Reservation_State = "Not yet";
+
+    @Pattern(regexp = "^(Not returned| returned)$", message = " Reterned must be either 'Reserved' or 'Not yet'")
+    private String returned ;
+
+    @Pattern(regexp = "^(Not taken| taken)$", message = " Taken must be either 'Reserved' or 'Not yet'")
+    private String taken="Not taken" ;
+
+String Description;
     private String category="Equipments";
     // Expression régulière pour valider la propriété state
     @Pattern(regexp = "^(Enabled|Disabled)$", message = "State must be either 'Enabled' or 'Disabled'")

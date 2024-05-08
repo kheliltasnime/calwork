@@ -43,6 +43,11 @@ public class RoomsServiceImpl implements RoomsService {
                 .name(roomsRequest.getName())
                 .type(roomsRequest.getType())
                 .location(roomsRequest.getLocation())
+                .state(roomsRequest.getState())
+                .occupied(roomsRequest.getOccupied())
+                .free((roomsRequest.getFree()))
+                .Description((roomsRequest.getDescription()))
+                .Reservation_State((roomsRequest.getReservation_State()))
                 .maintenance_status(roomsRequest.getMaintenance_status())
                 .capacity(roomsRequest.getCapacity())
                 .category(roomsRequest.getCategory())
@@ -65,6 +70,15 @@ public class RoomsServiceImpl implements RoomsService {
         }
         if (roomsRequest.getState() != null){
             rooms.setState(roomsRequest.getState());
+        }
+        if (roomsRequest.getReservation_State() != null){
+            rooms.setReservation_State(roomsRequest.getReservation_State());
+        }
+        if (roomsRequest.getFree() != null){
+            rooms.setFree(roomsRequest.getFree());
+        }
+        if (roomsRequest.getOccupied() != null){
+            rooms.setOccupied(roomsRequest.getOccupied());
         }
         if (roomsRequest.getMaintenance_status() != null){
             rooms.setMaintenance_status(roomsRequest.getMaintenance_status());

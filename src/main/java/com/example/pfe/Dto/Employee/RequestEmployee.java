@@ -17,6 +17,7 @@ public class RequestEmployee {
     Long id;
     String firstName;
     String lastName;
+    Long employeId;
     @Max(value = 99999999 , message = "Phone number invalid ")
     @Min(value = 10000000 , message = "Phone number invalid ")
     int phoneNumber;

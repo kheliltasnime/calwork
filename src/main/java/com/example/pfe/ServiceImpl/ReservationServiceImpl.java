@@ -46,6 +46,7 @@ public class ReservationServiceImpl implements ReservationService {
                 .category(requestReservation.getCategory())
                 .subCategory(requestReservation.getSubCategory())
                 .departDate(requestReservation.getDepartDate())
+
                 .equipmentsId(requestReservation.getEquipmentsId())
                 .roomsId(requestReservation.getRoomsId())
                 .departHour(requestReservation.getDepartHour())

@@ -111,4 +111,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.deleteById(id);
         return true;
     }
+    @Override
+    public Optional<Employee> getEmployeeByEmail(String email) {
+        // Utilisez le repository pour rechercher l'employé par e-mail
+        return employeeRepository.getByEmail(email);
+    }
 }

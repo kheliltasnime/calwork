@@ -8,6 +8,7 @@ import com.example.pfe.Dto.LoginMessage;
 import com.example.pfe.Entities.Employee;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface EmployeeService {
     List<ResponseEmployee> getAllEmployee();
@@ -17,4 +18,5 @@ public interface EmployeeService {
     ResponseEmployee getEmployeeById(Long id);
    // ResponseEmployee getEmployeeByIdwithTask(Long id);
     LoginMessage loginEmployee(LoginDTO loginDTO);
+    Optional<Employee> getEmployeeByEmail(String email);
 }

@@ -28,6 +28,7 @@ public class ResponseReservation {
     String subCategory;
     String departDate;
     String departHour;
+
     String returnHour;
     private Instant createdAt;
     private Instant updatedAt;
@@ -42,6 +43,7 @@ public class ResponseReservation {
                 .subCategory(reservation.getSubCategory())
                 .equipmentsId(reservation.getEquipmentsId())
                 .roomsId(reservation.getRoomsId())
+
                 .departDate(reservation.getDepartDate())
                 .departHour(reservation.getDepartHour())
                 .returnHour(reservation.getReturnHour())
@@ -72,6 +74,7 @@ public class ResponseReservation {
                 .departDate(reservation.getDepartDate())
                 .departHour(reservation.getDepartHour())
                 .returnHour(reservation.getReturnHour())
+
                 .createdAt(reservation.getCreatedAt())
                 .updatedAt(reservation.getUpdatedAt())
                 .equipments(usersFormated1)

@@ -14,4 +14,6 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 
     Optional<Employee> findOneByEmailAndPassword(String email, String storedPassword);
 
+    Optional<Employee> getByEmail(String email);
+
 }

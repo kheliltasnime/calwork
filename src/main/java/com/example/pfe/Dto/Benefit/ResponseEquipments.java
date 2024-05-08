@@ -27,12 +27,17 @@ public class ResponseEquipments {
     Date purchase_date; //date d'achat
     Integer quantity;
     Integer price;
+    String Description;
     String maintenance_status;
     Long benefitId;
     private Instant createdAt;
     private Instant updatedAt;
     private ResponseBenefit benefit;
     private String state;
+    private String Reservation_State;
+    private  String returned;
+    private String  taken;
+
     String category="Equipments";
     public static ResponseEquipments makeEquipments(Equipments equipments){
         return ResponseEquipments.builder()
@@ -43,8 +48,13 @@ public class ResponseEquipments {
                 .model(equipments.getModel())
                 .purchase_date(equipments.getPurchase_date())
                 .quantity(equipments.getQuantity())
+                .Reservation_State(equipments.getReservation_State())
                 .price(equipments.getPrice())
+                .Description(equipments.getDescription())
+                .taken(equipments.getTaken())
+                .returned(equipments.getReturned())
                 .category(equipments.getCategory())
+                .Description(equipments.getDescription())
                 .state(equipments.getState()) // Assigner la valeur de state
                 .maintenance_status(equipments.getMaintenance_status())
                 .benefit(ResponseBenefit.makeBenefit(equipments.getBenefit()))

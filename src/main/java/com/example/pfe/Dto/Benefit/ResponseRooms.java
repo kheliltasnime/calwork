@@ -25,6 +25,10 @@ public class ResponseRooms {
     private String state;
     private ResponseBenefit benefit;
     private String category="Rooms";
+    private String Reservation_State;
+    private  String occupied;
+    private String  free;
+    private String Description;
     public static ResponseRooms makeRooms(Rooms rooms){
         return ResponseRooms.builder()
                 .id(rooms.getId())
@@ -35,6 +39,9 @@ public class ResponseRooms {
                 .capacity(rooms.getCapacity())
                 .category(rooms.getCategory())
                 .state(rooms.getState())
+                .free(rooms.getFree())
+                .occupied(rooms.getOccupied())
+                .Description(rooms.getDescription())
                 .benefit(ResponseBenefit.makeBenefit(rooms.getBenefit()))
                 .createdAt(rooms.getCreatedAt())
                 .updatedAt(rooms.getUpdatedAt())

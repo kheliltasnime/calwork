@@ -25,5 +25,15 @@ public class RequestEquipmentsUpdate {
     @Pattern(regexp = "^(Enabled|Disabled)$", message = "State must be either 'Enabled' or 'Disabled'")
     private String state = "Enabled";
     private String category="Equipments";
+    @Pattern(regexp = "^(Reserved|Not yet)$", message = " Reservation State must be either 'Reserved' or 'Not yet'")
+    private String Reservation_State = "Not yet";
+    @Pattern(regexp = "^(Not returned| returned)$", message = " Reservation State must be either 'Reserved' or 'Not yet'")
+    private String returned="Not returned" ;
+
+    String Description;
+
+    @Pattern(regexp = "^(Not taken| taken)$", message = " Taken must be either 'Reserved' or 'Not yet'")
+    private String taken="Not taken" ;
+
 
 }

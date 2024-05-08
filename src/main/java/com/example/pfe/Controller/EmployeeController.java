@@ -5,6 +5,7 @@ import com.example.pfe.Dto.Employee.RequestEmployeeUpdate;
 import com.example.pfe.Dto.Employee.ResponseEmployee;
 import com.example.pfe.Dto.LoginDTO;
 import com.example.pfe.Dto.LoginMessage;
+import com.example.pfe.Entities.Employee;
 import com.example.pfe.Service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -65,5 +67,14 @@ public class EmployeeController {
         LoginMessage loginMessage = employeeService.loginEmployee(loginDTO);
         return ResponseEntity.ok(loginMessage);
     }
+    @GetMapping("/email/{email}")
+    public ResponseEntity<?> getEmployeeByEmail(@PathVariable String email) {
+        Optional<Employee> employee = employeeService.getEmployeeByEmail(email);
+        if (employee.isPresent()) {
+            return new ResponseEntity<>(employee.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Employee not found for email: " + email, HttpStatus.NOT_FOUND);
+}
+}
 
 }

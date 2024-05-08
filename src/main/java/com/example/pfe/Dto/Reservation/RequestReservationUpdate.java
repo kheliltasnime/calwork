@@ -15,4 +15,5 @@ public class RequestReservationUpdate {
     String departHour;
     String returnHour;
 
+
 }
